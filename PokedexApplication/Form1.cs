@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace PokedexApplication
 {
-    public partial class Form1 : Form
+    public partial class pokedexMainWindow : Form
     {
-        public Form1()
+        List<String> listOfPokemon = null;
+        public pokedexMainWindow(List<String> l)
         {
+            listOfPokemon = l;
             InitializeComponent();
+            foreach (var pokeName in listOfPokemon)
+            {
+                pokemonListComboBox.Items.Add(pokeName);
+            }
+        }
+        private void pokemonListComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

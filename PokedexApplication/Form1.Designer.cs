@@ -1,6 +1,6 @@
 ﻿namespace PokedexApplication
 {
-    partial class Form1
+    partial class pokedexMainWindow
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.pokemonListComboBox = new System.Windows.Forms.ComboBox();
+            this.SuspendLayout();
+            // 
+            // pokemonListComboBox
+            // 
+            this.pokemonListComboBox.FormattingEnabled = true;
+            this.pokemonListComboBox.Location = new System.Drawing.Point(257, 12);
+            this.pokemonListComboBox.Name = "pokemonListComboBox";
+            this.pokemonListComboBox.Size = new System.Drawing.Size(156, 24);
+            this.pokemonListComboBox.TabIndex = 0;
+            this.pokemonListComboBox.Text = "Select a Pokemon";
+            this.pokemonListComboBox.SelectedIndexChanged += new System.EventHandler(this.pokemonListComboBox_SelectedIndexChanged);
+            // 
+            // pokedexMainWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pokemonListComboBox);
+            this.Name = "pokedexMainWindow";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ComboBox pokemonListComboBox;
     }
 }
 

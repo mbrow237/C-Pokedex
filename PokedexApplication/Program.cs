@@ -14,9 +14,16 @@ namespace PokedexApplication
         [STAThread]
         static void Main()
         {
+            
+            ListOfPokemon lop = new ListOfPokemon();
+            List<String> pokeList = new List<string>();
+            pokeList = lop.getListOfPokemon();
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new pokedexMainWindow(pokeList)); //Create Window, and add list of pokemon names, since it's the first thing loaded with the window.
+
+            
         }
     }
 }
