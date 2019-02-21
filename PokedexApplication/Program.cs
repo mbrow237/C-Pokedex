@@ -14,14 +14,18 @@ namespace PokedexApplication
         [STAThread]
         static void Main()
         {
-            
+
+
+            //List<String> pokeList = new List<string>();
+            //pokeList = lop.getListOfPokemon();
+
             ListOfPokemon lop = new ListOfPokemon();
-            List<String> pokeList = new List<string>();
-            pokeList = lop.getListOfPokemon();
-            
+            List<pokemonObject> po = new List<pokemonObject>();
+            po = lop.getListOfPokemon();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new pokedexMainWindow(pokeList)); //Create Window, and add list of pokemon names, since it's the first thing loaded with the window.
+            Application.Run(new pokedexMainWindow(po)); //Create Window, and add list of pokemon names, since it's the first thing loaded with the window.
 
             
         }

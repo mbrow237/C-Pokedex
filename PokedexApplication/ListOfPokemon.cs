@@ -10,7 +10,8 @@ namespace PokedexApplication
 {
     internal class ListOfPokemon
     {
-        List<String> listOfPokemon = new List<String>();
+        //List<String> listOfPokemon = new List<String>();
+        List<pokemonObject> po = new List<pokemonObject>();
         SqlConnection connection = null;
         public ListOfPokemon()
         {
@@ -20,9 +21,7 @@ namespace PokedexApplication
                 builder.UserID = "pokeuser";              // update me
                 builder.Password = "password";      // update me
                 builder.InitialCatalog = "PokemonDatabase";
-                float testFloat = 0;
-                string testData = "";
-                string testName = "";
+
 
                 using (connection = new SqlConnection(builder.ConnectionString))
                 {
@@ -30,13 +29,15 @@ namespace PokedexApplication
 
 
                     SqlDataReader sdr = null;
-                    string sqlText = "SELECT species_id , identifier FROM[pokemon].[pokemon] Order By[species_id];";
+                    //string sqlText = "SELECT species_id , identifier, FROM[pokemon].[pokemon] Order By[species_id];";
+                    string sqlText = "SELECT species_id , identifier, id FROM [pokemon].[pokemon] Order By[species_id];";
                     SqlCommand cmd = new SqlCommand(sqlText, connection);
                     sdr = cmd.ExecuteReader();
                     while (sdr.Read())
                     {
-
-                        listOfPokemon.Add("#" + sdr.GetDouble(0).ToString() + " " + sdr.GetString(1));
+                       
+                        po.Add(new pokemonObject { pokeID = sdr.GetDouble(2), pokeSpecies = sdr.GetDouble(0), pokeIdentifier = sdr.GetString(1) });
+                        //listOfPokemon.Add("#" + sdr.GetDouble(0).ToString() + " " + sdr.GetString(1));
                     }
                 }
             }
@@ -46,9 +47,9 @@ namespace PokedexApplication
             }
          }
 
-        public List<String> getListOfPokemon()
+        public List<pokemonObject> getListOfPokemon()
         {
-            return listOfPokemon;
+            return po;
         }
     }
 }
