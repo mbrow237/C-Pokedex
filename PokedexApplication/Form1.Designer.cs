@@ -63,7 +63,7 @@
             // hpLabel
             // 
             this.hpLabel.AutoSize = true;
-            this.hpLabel.Location = new System.Drawing.Point(21, 0);
+            this.hpLabel.Location = new System.Drawing.Point(21, 20);
             this.hpLabel.Name = "hpLabel";
             this.hpLabel.Size = new System.Drawing.Size(46, 17);
             this.hpLabel.TabIndex = 2;
@@ -73,7 +73,7 @@
             // attackLabel
             // 
             this.attackLabel.AutoSize = true;
-            this.attackLabel.Location = new System.Drawing.Point(21, 17);
+            this.attackLabel.Location = new System.Drawing.Point(21, 57);
             this.attackLabel.Name = "attackLabel";
             this.attackLabel.Size = new System.Drawing.Size(46, 17);
             this.attackLabel.TabIndex = 3;
@@ -82,7 +82,7 @@
             // defLabel
             // 
             this.defLabel.AutoSize = true;
-            this.defLabel.Location = new System.Drawing.Point(21, 34);
+            this.defLabel.Location = new System.Drawing.Point(21, 96);
             this.defLabel.Name = "defLabel";
             this.defLabel.Size = new System.Drawing.Size(46, 17);
             this.defLabel.TabIndex = 4;
@@ -91,7 +91,7 @@
             // spattLabel
             // 
             this.spattLabel.AutoSize = true;
-            this.spattLabel.Location = new System.Drawing.Point(21, 51);
+            this.spattLabel.Location = new System.Drawing.Point(21, 133);
             this.spattLabel.Name = "spattLabel";
             this.spattLabel.Size = new System.Drawing.Size(46, 17);
             this.spattLabel.TabIndex = 5;
@@ -100,7 +100,7 @@
             // spdefLabel
             // 
             this.spdefLabel.AutoSize = true;
-            this.spdefLabel.Location = new System.Drawing.Point(21, 68);
+            this.spdefLabel.Location = new System.Drawing.Point(21, 175);
             this.spdefLabel.Name = "spdefLabel";
             this.spdefLabel.Size = new System.Drawing.Size(46, 17);
             this.spdefLabel.TabIndex = 6;
@@ -109,7 +109,7 @@
             // spdLabel
             // 
             this.spdLabel.AutoSize = true;
-            this.spdLabel.Location = new System.Drawing.Point(21, 85);
+            this.spdLabel.Location = new System.Drawing.Point(21, 220);
             this.spdLabel.Name = "spdLabel";
             this.spdLabel.Size = new System.Drawing.Size(46, 17);
             this.spdLabel.TabIndex = 7;
@@ -125,7 +125,7 @@
             this.panel1.Controls.Add(this.spattLabel);
             this.panel1.Location = new System.Drawing.Point(12, 118);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 175);
+            this.panel1.Size = new System.Drawing.Size(526, 249);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
