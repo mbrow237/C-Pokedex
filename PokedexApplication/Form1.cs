@@ -15,7 +15,7 @@ namespace PokedexApplication
     {
         List<pokemonObject> listOfPokemon = null;
         SqlConnection connection = null;
-        statBar sb = new statBar(0,0,0);
+        statBar sb = new statBar(0,0,0);//object to reperesent stat bar
         Graphics g;
         
         public pokedexMainWindow(List<pokemonObject> pl)
@@ -61,11 +61,11 @@ namespace PokedexApplication
                         counter++;
                     }
 
-                    //drawReset();
+                    #region
                     currentPokemon.hpStat = statsArray[0];
-                    hpLabel.Text = currentPokemon.hpStat.ToString();
-                    sb.setRect(60, (hpLabel.Location.Y), Convert.ToInt16(statsArray[0]));
-                    drawRect();
+                    hpLabel.Text = currentPokemon.hpStat.ToString();//Set Up Label for HP stat
+                    sb.setRect(60, (hpLabel.Location.Y), (Convert.ToInt16(statsArray[0])));//this set up rectangle to represent the stat bar
+                    drawRect(); //draw method for stat bar
 
                     currentPokemon.attStat = statsArray[1];
                     attackLabel.Text = currentPokemon.attStat.ToString();
@@ -91,6 +91,7 @@ namespace PokedexApplication
                     spdLabel.Text = currentPokemon.spdStat.ToString();
                     sb.setRect(60, (spdLabel.Location.Y), Convert.ToInt16(statsArray[5]));
                     drawRect();
+                    #endregion Setting up stats and draw rectangles
                 }
             }
             catch(SqlException e)
@@ -102,8 +103,8 @@ namespace PokedexApplication
 
         private void drawRect()
         {
-            
-            g.DrawRectangle(sb.getPen(), sb.GetRectangle());
+
+            g.FillRectangle(sb.getBrush(), sb.GetRectangle());//create stat bar when called
         }
 
         private void drawReset()
