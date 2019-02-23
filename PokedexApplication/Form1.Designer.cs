@@ -125,7 +125,7 @@
             this.panel1.Controls.Add(this.spattLabel);
             this.panel1.Location = new System.Drawing.Point(12, 118);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(526, 249);
+            this.panel1.Size = new System.Drawing.Size(485, 249);
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -133,7 +133,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(928, 571);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pokemonNameLabel);
             this.Controls.Add(this.pokemonListComboBox);

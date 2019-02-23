@@ -63,33 +63,33 @@ namespace PokedexApplication
 
                     #region
                     currentPokemon.hpStat = statsArray[0];
-                    hpLabel.Text = currentPokemon.hpStat.ToString();//Set Up Label for HP stat
-                    sb.setRect(60, (hpLabel.Location.Y), (Convert.ToInt16(statsArray[0])));//this set up rectangle to represent the stat bar
+                    hpLabel.Text = "HP: " + currentPokemon.hpStat.ToString();//Set Up Label for HP stat
+                    sb.setRect(80, (hpLabel.Location.Y), (Convert.ToInt16(statsArray[0])));//this set up rectangle to represent the stat bar
                     drawRect(); //draw method for stat bar
 
                     currentPokemon.attStat = statsArray[1];
-                    attackLabel.Text = currentPokemon.attStat.ToString();
-                    sb.setRect(60, (attackLabel.Location.Y), Convert.ToInt16(statsArray[1]));
+                    attackLabel.Text = "Attack: " + currentPokemon.attStat.ToString();
+                    sb.setRect(80, (attackLabel.Location.Y), Convert.ToInt16(statsArray[1]));
                     drawRect();
 
                     currentPokemon.defStat = statsArray[2];
-                    defLabel.Text = currentPokemon.defStat.ToString();
-                    sb.setRect(60, (defLabel.Location.Y), Convert.ToInt16(statsArray[2]));
+                    defLabel.Text = "Def: " + currentPokemon.defStat.ToString();
+                    sb.setRect(80, (defLabel.Location.Y), Convert.ToInt16(statsArray[2]));
                     drawRect();
 
                     currentPokemon.spatkStat = statsArray[3];
-                    spattLabel.Text = currentPokemon.spatkStat.ToString();
-                    sb.setRect(60, (spattLabel.Location.Y), Convert.ToInt16(statsArray[3]));
+                    spattLabel.Text = "SpAtt: " + currentPokemon.spatkStat.ToString();
+                    sb.setRect(80, (spattLabel.Location.Y), Convert.ToInt16(statsArray[3]));
                     drawRect();
 
                     currentPokemon.spdefStat = statsArray[4];
-                    spdefLabel.Text = currentPokemon.spdefStat.ToString();
-                    sb.setRect(60, (spdefLabel.Location.Y), Convert.ToInt16(statsArray[4]));
+                    spdefLabel.Text = "SpDef: " + currentPokemon.spdefStat.ToString();
+                    sb.setRect(80, (spdefLabel.Location.Y), Convert.ToInt16(statsArray[4]));
                     drawRect();
 
                     currentPokemon.spdStat = statsArray[5];
-                    spdLabel.Text = currentPokemon.spdStat.ToString();
-                    sb.setRect(60, (spdLabel.Location.Y), Convert.ToInt16(statsArray[5]));
+                    spdLabel.Text = "Speed: " + currentPokemon.spdStat.ToString();
+                    sb.setRect(80, (spdLabel.Location.Y), Convert.ToInt16(statsArray[5]));
                     drawRect();
                     #endregion Setting up stats and draw rectangles
                 }

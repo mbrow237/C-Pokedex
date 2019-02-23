@@ -10,7 +10,7 @@ namespace PokedexApplication
 {
     internal class ListOfPokemon
     {
-        //List<String> listOfPokemon = new List<String>();
+        
         List<pokemonObject> po = new List<pokemonObject>();
         SqlConnection connection = null;
         public ListOfPokemon()
@@ -28,16 +28,15 @@ namespace PokedexApplication
                     connection.Open();
 
 
-                    SqlDataReader sdr = null;
-                    //string sqlText = "SELECT species_id , identifier, FROM[pokemon].[pokemon] Order By[species_id];";
-                    string sqlText = "SELECT species_id , identifier, id FROM [pokemon].[pokemon] Order By[species_id];";
+                    SqlDataReader sdr = null;                   
+                    string sqlText = "SELECT species_id , identifier, id FROM [pokemon].[pokemon] Order By[species_id], id;";
                     SqlCommand cmd = new SqlCommand(sqlText, connection);
                     sdr = cmd.ExecuteReader();
                     while (sdr.Read())
                     {
                        
                         po.Add(new pokemonObject { pokeID = sdr.GetDouble(2), pokeSpecies = sdr.GetDouble(0), pokeIdentifier = sdr.GetString(1) });
-                        //listOfPokemon.Add("#" + sdr.GetDouble(0).ToString() + " " + sdr.GetString(1));
+                        
                     }
                 }
             }
