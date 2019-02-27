@@ -34,10 +34,13 @@ namespace PokedexApplication
         {
             pokemonObject currentPokemon = si;
             pi = new pokemonInfo(currentPokemon);
-            Double[] statsArray = new Double[6];
-            drawReset();//Reset Statbar drawings
 
+            //Double[] statsArray = new Double[6];
+
+            drawReset();//Reset Statbar drawings
             pokemonNameLabel.Text = currentPokemon.pokeIdentifier;
+
+            /*
             try
             {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
@@ -62,45 +65,46 @@ namespace PokedexApplication
                     {
                         statsArray[counter] = sdr.GetDouble(0);
                         counter++;
-                    }
+                    }*/
 
                     #region
-                    currentPokemon.hpStat = statsArray[0];
+                    //currentPokemon.hpStat = statsArray[0];
                     hpLabel.Text = "HP: " + currentPokemon.hpStat.ToString();//Set Up Label for HP stat
-                    sb.setRect(80, (hpLabel.Location.Y), (Convert.ToInt16(statsArray[0])));//this set up rectangle to represent the stat bar
+                    sb.setRect(80, (hpLabel.Location.Y), (Convert.ToInt16(currentPokemon.hpStat)));//this set up rectangle to represent the stat bar
                     drawRect(); //draw method for stat bar
 
-                    currentPokemon.attStat = statsArray[1];
+                    //currentPokemon.attStat = statsArray[1];
                     attackLabel.Text = "Attack: " + currentPokemon.attStat.ToString();
-                    sb.setRect(80, (attackLabel.Location.Y), Convert.ToInt16(statsArray[1]));
+                    sb.setRect(80, (attackLabel.Location.Y), Convert.ToInt16(currentPokemon.attStat));
                     drawRect();
 
-                    currentPokemon.defStat = statsArray[2];
+                    //currentPokemon.defStat = statsArray[2];
                     defLabel.Text = "Def: " + currentPokemon.defStat.ToString();
-                    sb.setRect(80, (defLabel.Location.Y), Convert.ToInt16(statsArray[2]));
+                    sb.setRect(80, (defLabel.Location.Y), Convert.ToInt16(currentPokemon.defStat));
                     drawRect();
 
-                    currentPokemon.spatkStat = statsArray[3];
+                    //currentPokemon.spatkStat = statsArray[3];
                     spattLabel.Text = "SpAtt: " + currentPokemon.spatkStat.ToString();
-                    sb.setRect(80, (spattLabel.Location.Y), Convert.ToInt16(statsArray[3]));
+                    sb.setRect(80, (spattLabel.Location.Y), Convert.ToInt16(currentPokemon.spatkStat));
                     drawRect();
 
-                    currentPokemon.spdefStat = statsArray[4];
+                    //currentPokemon.spdefStat = statsArray[4];
                     spdefLabel.Text = "SpDef: " + currentPokemon.spdefStat.ToString();
-                    sb.setRect(80, (spdefLabel.Location.Y), Convert.ToInt16(statsArray[4]));
+                    sb.setRect(80, (spdefLabel.Location.Y), Convert.ToInt16(currentPokemon.spdefStat));
                     drawRect();
 
-                    currentPokemon.spdStat = statsArray[5];
+                    //currentPokemon.spdStat = statsArray[5];
                     spdLabel.Text = "Speed: " + currentPokemon.spdStat.ToString();
-                    sb.setRect(80, (spdLabel.Location.Y), Convert.ToInt16(statsArray[5]));
+                    sb.setRect(80, (spdLabel.Location.Y), Convert.ToInt16(currentPokemon.spdStat));
                     drawRect();
                     #endregion Setting up stats and draw rectangles
+            /*
                 }
             }
             catch(SqlException e)
             {
                 Console.WriteLine(e.ToString());
-            }
+            }*/
 
             pokemonTypeOneLabel.Text = currentPokemon.typeOne;
             pokemonTypeTwoLabel.Text = currentPokemon.typeTwo;
