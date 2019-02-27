@@ -37,6 +37,8 @@
             this.spdefLabel = new System.Windows.Forms.Label();
             this.spdLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pokemonTypeOneLabel = new System.Windows.Forms.Label();
+            this.pokemonTypeTwoLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,11 +131,31 @@
             this.panel1.TabIndex = 8;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // pokemonTypeOneLabel
+            // 
+            this.pokemonTypeOneLabel.AutoSize = true;
+            this.pokemonTypeOneLabel.Location = new System.Drawing.Point(680, 39);
+            this.pokemonTypeOneLabel.Name = "pokemonTypeOneLabel";
+            this.pokemonTypeOneLabel.Size = new System.Drawing.Size(46, 17);
+            this.pokemonTypeOneLabel.TabIndex = 9;
+            this.pokemonTypeOneLabel.Text = "label1";
+            // 
+            // pokemonTypeTwoLabel
+            // 
+            this.pokemonTypeTwoLabel.AutoSize = true;
+            this.pokemonTypeTwoLabel.Location = new System.Drawing.Point(762, 39);
+            this.pokemonTypeTwoLabel.Name = "pokemonTypeTwoLabel";
+            this.pokemonTypeTwoLabel.Size = new System.Drawing.Size(46, 17);
+            this.pokemonTypeTwoLabel.TabIndex = 10;
+            this.pokemonTypeTwoLabel.Text = "label2";
+            // 
             // pokedexMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 571);
+            this.Controls.Add(this.pokemonTypeTwoLabel);
+            this.Controls.Add(this.pokemonTypeOneLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pokemonNameLabel);
             this.Controls.Add(this.pokemonListComboBox);
@@ -157,6 +179,8 @@
         private System.Windows.Forms.Label spdefLabel;
         private System.Windows.Forms.Label spdLabel;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label pokemonTypeOneLabel;
+        private System.Windows.Forms.Label pokemonTypeTwoLabel;
     }
 }
 

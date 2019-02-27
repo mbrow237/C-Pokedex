@@ -17,6 +17,8 @@ namespace PokedexApplication
         SqlConnection connection = null;
         statBar sb = new statBar(0,0,0);//object to reperesent stat bar
         Graphics g;
+        pokemonInfo pi = null;
+        
         
         public pokedexMainWindow(List<pokemonObject> pl)
             {
@@ -31,8 +33,9 @@ namespace PokedexApplication
         public void pokemonSelection(pokemonObject si)
         {
             pokemonObject currentPokemon = si;
+            pi = new pokemonInfo(currentPokemon);
             Double[] statsArray = new Double[6];
-            drawReset();
+            drawReset();//Reset Statbar drawings
 
             pokemonNameLabel.Text = currentPokemon.pokeIdentifier;
             try
@@ -98,6 +101,10 @@ namespace PokedexApplication
             {
                 Console.WriteLine(e.ToString());
             }
+
+            pokemonTypeOneLabel.Text = currentPokemon.typeOne;
+            pokemonTypeTwoLabel.Text = currentPokemon.typeTwo;
+
         }
 
 

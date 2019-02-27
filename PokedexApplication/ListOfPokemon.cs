@@ -17,9 +17,9 @@ namespace PokedexApplication
         {
             try {
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "MSI\\MSSQLSERVER01";   // update me
-                builder.UserID = "pokeuser";              // update me
-                builder.Password = "password";      // update me
+                builder.DataSource = "MSI\\MSSQLSERVER01";  
+                builder.UserID = "pokeuser";              
+                builder.Password = "password";      
                 builder.InitialCatalog = "PokemonDatabase";
 
 
