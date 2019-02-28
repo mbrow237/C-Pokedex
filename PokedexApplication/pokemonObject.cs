@@ -8,7 +8,6 @@ namespace PokedexApplication
         public string pokeIdentifier { get; set; }
         public double pokeID { get; set; }
         public double pokeSpecies { get; set; }
-        //public double[] pokemonStatHolder = new double[6];
         public double hpStat { get; set; }
         public double attStat { get; set; }
         public double defStat { get; set; }
@@ -28,19 +27,5 @@ namespace PokedexApplication
         {
             return "#" + pokeSpecies + " " + pokeIdentifier;
         }
-        
-        /*
-        public void setPokemonStatsFromHolder(double[] ps)
-        {
-            
-            hpStat = ps[0];
-            attStat = ps[1];
-            defStat = ps[2];
-            spatkStat = ps[3];
-            spdefStat = ps[4];
-            spdStat = ps[5];
-
-        }
-        */
     }
  }
