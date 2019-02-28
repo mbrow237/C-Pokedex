@@ -39,6 +39,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pokemonTypeOneLabel = new System.Windows.Forms.Label();
             this.pokemonTypeTwoLabel = new System.Windows.Forms.Label();
+            this.pokemonAbilityOneLabel = new System.Windows.Forms.Label();
+            this.pokemonAbilityTwoLabel = new System.Windows.Forms.Label();
+            this.pokemonAbilityThreeLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -149,11 +152,41 @@
             this.pokemonTypeTwoLabel.TabIndex = 10;
             this.pokemonTypeTwoLabel.Text = "label2";
             // 
+            // pokemonAbilityOneLabel
+            // 
+            this.pokemonAbilityOneLabel.AutoSize = true;
+            this.pokemonAbilityOneLabel.Location = new System.Drawing.Point(593, 118);
+            this.pokemonAbilityOneLabel.Name = "pokemonAbilityOneLabel";
+            this.pokemonAbilityOneLabel.Size = new System.Drawing.Size(57, 17);
+            this.pokemonAbilityOneLabel.TabIndex = 11;
+            this.pokemonAbilityOneLabel.Text = "Ability 1";
+            // 
+            // pokemonAbilityTwoLabel
+            // 
+            this.pokemonAbilityTwoLabel.AutoSize = true;
+            this.pokemonAbilityTwoLabel.Location = new System.Drawing.Point(796, 118);
+            this.pokemonAbilityTwoLabel.Name = "pokemonAbilityTwoLabel";
+            this.pokemonAbilityTwoLabel.Size = new System.Drawing.Size(57, 17);
+            this.pokemonAbilityTwoLabel.TabIndex = 12;
+            this.pokemonAbilityTwoLabel.Text = "Ability 2";
+            // 
+            // pokemonAbilityThreeLabel
+            // 
+            this.pokemonAbilityThreeLabel.AutoSize = true;
+            this.pokemonAbilityThreeLabel.Location = new System.Drawing.Point(717, 175);
+            this.pokemonAbilityThreeLabel.Name = "pokemonAbilityThreeLabel";
+            this.pokemonAbilityThreeLabel.Size = new System.Drawing.Size(53, 17);
+            this.pokemonAbilityThreeLabel.TabIndex = 13;
+            this.pokemonAbilityThreeLabel.Text = "Hidden";
+            // 
             // pokedexMainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(928, 571);
+            this.Controls.Add(this.pokemonAbilityThreeLabel);
+            this.Controls.Add(this.pokemonAbilityTwoLabel);
+            this.Controls.Add(this.pokemonAbilityOneLabel);
             this.Controls.Add(this.pokemonTypeTwoLabel);
             this.Controls.Add(this.pokemonTypeOneLabel);
             this.Controls.Add(this.panel1);
@@ -179,8 +212,11 @@
         private System.Windows.Forms.Label spdefLabel;
         private System.Windows.Forms.Label spdLabel;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label pokemonTypeOneLabel;
         private System.Windows.Forms.Label pokemonTypeTwoLabel;
+        private System.Windows.Forms.Label pokemonTypeOneLabel;
+        private System.Windows.Forms.Label pokemonAbilityOneLabel;
+        private System.Windows.Forms.Label pokemonAbilityTwoLabel;
+        private System.Windows.Forms.Label pokemonAbilityThreeLabel;
     }
 }
 

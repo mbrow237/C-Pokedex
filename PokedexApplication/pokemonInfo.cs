@@ -12,6 +12,7 @@ namespace PokedexApplication
             int pokeIDInt = Convert.ToInt32(poke.pokeID);
             setPokemonStats(poke);
             setPokemonType(pokeIDInt, poke);
+            setPokemonAbilities(poke);
         }
 
         public Double[] setPokemonStats(pokemonObject poke)
@@ -94,6 +95,60 @@ namespace PokedexApplication
                 }
             }
 
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+        }
+
+        public void setPokemonAbilities(pokemonObject poke)
+        {
+            int slot = 0;
+            try
+            {
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = "MSI\\MSSQLSERVER01";   // update me
+                builder.UserID = "pokeuser";              // update me
+                builder.Password = "password";      // update me
+                builder.InitialCatalog = "PokemonDatabase";
+
+                using (connection = new SqlConnection(builder.ConnectionString))
+                {
+                    int pokeIDInt = Convert.ToInt32(poke.pokeID);
+                    connection.Open();
+                    SqlDataReader sdr = null;
+                    string sqlText = "pokemon.pr_vSelectPokemonByID_AbilitiesNameAndSlot";
+                    SqlCommand cmd = new SqlCommand(sqlText, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ID", pokeIDInt);
+                    sdr = cmd.ExecuteReader();
+
+                    while (sdr.Read())
+                    {
+                        slot = sdr.GetInt32(1);
+                        if (slot > 3)
+                        {
+                            slot = 3;
+                        }
+
+                        switch (slot)
+                        {
+                            case 1:
+                                poke.abilityOne = sdr.GetString(0);
+                                break;
+                            case 2:
+                                poke.abilityTwo = sdr.GetString(0);
+                                break;
+                            case 3:
+                                poke.abilityThree = sdr.GetString(0);
+                                break;
+                            default:
+                                poke.abilityThree = sdr.GetString(0);
+                                break;
+                        }
+                    }
+                }
+            }
             catch (SqlException e)
             {
                 Console.WriteLine(e.ToString());

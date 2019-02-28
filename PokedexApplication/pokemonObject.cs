@@ -16,6 +16,9 @@ namespace PokedexApplication
         public double spdStat { get; set; }
         public string typeOne { get; set; }
         public string typeTwo { get; set; }
+        public string abilityOne { get; set; }
+        public string abilityTwo { get; set; }
+        public string abilityThree { get; set; }
         
 
         public pokemonObject()

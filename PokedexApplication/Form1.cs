@@ -108,6 +108,9 @@ namespace PokedexApplication
 
             pokemonTypeOneLabel.Text = currentPokemon.typeOne;
             pokemonTypeTwoLabel.Text = currentPokemon.typeTwo;
+            pokemonAbilityOneLabel.Text = currentPokemon.abilityOne;
+            pokemonAbilityTwoLabel.Text = currentPokemon.abilityTwo;
+            pokemonAbilityThreeLabel.Text = currentPokemon.abilityThree;
 
         }
 
