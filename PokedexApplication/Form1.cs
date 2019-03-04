@@ -34,38 +34,9 @@ namespace PokedexApplication
         {
             pokemonObject currentPokemon = si;
             pi = new pokemonInfo(currentPokemon);
-
-            //Double[] statsArray = new Double[6];
-
             drawReset();//Reset Statbar drawings
             pokemonNameLabel.Text = currentPokemon.pokeIdentifier;
-
-            /*
-            try
-            {
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "MSI\\MSSQLSERVER01";   // update me
-                builder.UserID = "pokeuser";              // update me
-                builder.Password = "password";      // update me
-                builder.InitialCatalog = "PokemonDatabase";
-
-
-                using (connection = new SqlConnection(builder.ConnectionString))
-                {
-                    int pokeIDInt = Convert.ToInt32(currentPokemon.pokeID);
-                    connection.Open();
-                    SqlDataReader sdr = null;
-                    string sqlText = "pokemon.pr_vSelectPokemonByID_StatsOnly";
-                    SqlCommand cmd = new SqlCommand(sqlText, connection);
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    cmd.Parameters.AddWithValue("@ID", pokeIDInt);
-                    sdr = cmd.ExecuteReader();
-                    int counter = 0;
-                    while (sdr.Read())
-                    {
-                        statsArray[counter] = sdr.GetDouble(0);
-                        counter++;
-                    }*/
+            
 
                     #region
                     //currentPokemon.hpStat = statsArray[0];
@@ -98,19 +69,17 @@ namespace PokedexApplication
                     sb.setRect(80, (spdLabel.Location.Y), Convert.ToInt16(currentPokemon.spdStat));
                     drawRect();
                     #endregion Setting up stats and draw rectangles
-            /*
-                }
-            }
-            catch(SqlException e)
-            {
-                Console.WriteLine(e.ToString());
-            }*/
+
 
             pokemonTypeOneLabel.Text = currentPokemon.typeOne;
             pokemonTypeTwoLabel.Text = currentPokemon.typeTwo;
             pokemonAbilityOneLabel.Text = currentPokemon.abilityOne;
             pokemonAbilityTwoLabel.Text = currentPokemon.abilityTwo;
             pokemonAbilityThreeLabel.Text = currentPokemon.abilityThree;
+
+            toolTip1.SetToolTip(pokemonAbilityOneLabel, pi.getPokemonAbilitiesFlavorText(pokemonAbilityOneLabel.Text));
+            toolTip1.SetToolTip(pokemonAbilityTwoLabel, pi.getPokemonAbilitiesFlavorText(pokemonAbilityTwoLabel.Text));
+            toolTip1.SetToolTip(pokemonAbilityThreeLabel, pi.getPokemonAbilitiesFlavorText(pokemonAbilityThreeLabel.Text));
 
         }
 
@@ -145,6 +114,11 @@ namespace PokedexApplication
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             g = panel1.CreateGraphics();
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+            string test = "Test";
         }
     }
 }

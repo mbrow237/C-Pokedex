@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pokemonListComboBox = new System.Windows.Forms.ComboBox();
             this.pokemonNameLabel = new System.Windows.Forms.Label();
             this.hpLabel = new System.Windows.Forms.Label();
@@ -42,6 +43,7 @@
             this.pokemonAbilityOneLabel = new System.Windows.Forms.Label();
             this.pokemonAbilityTwoLabel = new System.Windows.Forms.Label();
             this.pokemonAbilityThreeLabel = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,7 +175,7 @@
             // pokemonAbilityThreeLabel
             // 
             this.pokemonAbilityThreeLabel.AutoSize = true;
-            this.pokemonAbilityThreeLabel.Location = new System.Drawing.Point(717, 175);
+            this.pokemonAbilityThreeLabel.Location = new System.Drawing.Point(691, 175);
             this.pokemonAbilityThreeLabel.Name = "pokemonAbilityThreeLabel";
             this.pokemonAbilityThreeLabel.Size = new System.Drawing.Size(53, 17);
             this.pokemonAbilityThreeLabel.TabIndex = 13;
@@ -217,6 +219,7 @@
         private System.Windows.Forms.Label pokemonAbilityOneLabel;
         private System.Windows.Forms.Label pokemonAbilityTwoLabel;
         private System.Windows.Forms.Label pokemonAbilityThreeLabel;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

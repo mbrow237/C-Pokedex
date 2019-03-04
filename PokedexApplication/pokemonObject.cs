@@ -1,6 +1,8 @@
 ﻿/*This will be the pokemon object. 
  * This class represent each indiviual pokemon
- */ 
+ */
+using System;
+
 namespace PokedexApplication
 {
     public class pokemonObject
@@ -19,6 +21,7 @@ namespace PokedexApplication
         public string abilityOne { get; set; }
         public string abilityTwo { get; set; }
         public string abilityThree { get; set; }
+    
         
 
         public pokemonObject()

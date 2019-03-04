@@ -126,6 +126,7 @@ namespace PokedexApplication
                     while (sdr.Read())
                     {
                         slot = sdr.GetInt32(1);
+                        
                         if (slot > 3)
                         {
                             slot = 3;
@@ -153,6 +154,38 @@ namespace PokedexApplication
             {
                 Console.WriteLine(e.ToString());
             }
+        }
+
+        public string getPokemonAbilitiesFlavorText(string abname)
+        {
+            string flavorText = "Unavailable";
+            try
+            {
+                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
+                builder.DataSource = "MSI\\MSSQLSERVER01";   // update me
+                builder.UserID = "pokeuser";              // update me
+                builder.Password = "password";      // update me
+                builder.InitialCatalog = "PokemonDatabase";
+                using (connection = new SqlConnection(builder.ConnectionString))
+                {
+                    connection.Open();
+                    SqlDataReader sdr = null;
+                    string sqlText = "abilities.pr_vSelectAbilityFlavorText";
+                    SqlCommand cmd = new SqlCommand(sqlText, connection);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@abilityName", abname);
+                    sdr = cmd.ExecuteReader();
+                    while (sdr.Read())
+                    {
+                        flavorText = sdr.GetString(0);
+                    }
+                }
+            }
+            catch (SqlException e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            return flavorText;
         }
     }
 }
